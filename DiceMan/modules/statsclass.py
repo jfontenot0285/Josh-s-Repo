@@ -1,4 +1,4 @@
-class Infantry:
+class Stats:
     def __init__(self, bs, ws, s, t, a, sv):
         self.__bs = bs
         self.__ws = ws
@@ -6,24 +6,6 @@ class Infantry:
         self.__t = t
         self.__a = a
         self.__sv = sv
-
-    def setbs(self, i):
-        self.__bs = i
-
-    def setws(self, i):
-        self.__ws = i
-
-    def sets(self, i):
-        self.__s = i
-
-    def sett(self, i):
-        self.__t = i
-
-    def seta(self, i):
-        self.__a = i
-
-    def setsv(self, i):
-        self.__sv = i
 
     def getbs(self):
         return self.__bs
