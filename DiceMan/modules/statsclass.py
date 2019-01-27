@@ -1,26 +1,51 @@
 class Stats:
-    def __init__(self, bs, ws, s, t, a, sv):
-        self.__bs = bs
-        self.__ws = ws
-        self.__s = s
-        self.__t = t
-        self.__a = a
-        self.__sv = sv
+    def __init__(self, BS, WS, S, T, W, A, Sv):
+        self.__BS = BS
+        self.__WS = WS
+        self.__S = S
+        self.__T = T
+        self.__W = W
+        self.__A = A
+        self.__Sv = Sv
 
-    def getbs(self):
-        return self.__bs
+    def get_BS(self):
+        return self.__BS
 
-    def getws(self):
-        return self.__ws
+    def get_WS(self):
+        return self.__WS
 
-    def gets(self):
-        return self.__s
+    def get_S(self):
+        return self.__S
 
-    def gett(self):
-        return self.__t
+    def get_T(self):
+        return self.__T
 
-    def geta(self):
-        return self.__a
+    def get_W(self):
+        return self.__W
 
-    def getsv(self):
-        return self.__sv
+    def get_A(self):
+        return self.__A
+
+    def get_Sv(self):
+        return self.__Sv
+
+    def set_BS(self, i):
+        self.__BS = i
+
+    def set_WS(self, i):
+        self.__WS = i
+
+    def set_S(self, i):
+        self.__S = i
+
+    def set_T(self, i):
+        self.__T = i
+
+    def set_W(self, i):
+        self.__W = i
+
+    def set_A(self, i):
+        self.__A = i
+
+    def set_Sv(self, i):
+        self.__Sv = i
