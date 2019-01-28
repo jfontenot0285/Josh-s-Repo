@@ -1,35 +1,43 @@
 #!/usr/bin/python3
 
 from modules import *
+import os
 
 def main():
 
-    functions.set_stats()
+    functions.set_stats()    
+    p1 = functions.char_select(1)
+    p2 = functions.char_select(2)
 
-    print("Player 1, select your character: \n\n")
-    print(" \t1) Space Marine\n",\
-          "\t2) Aeldari\n",\
-          "\t3) Ork\n\n")
+    print("*"*24)
+    print("* Roll for first turn! *")
+    print("*"*24)
 
-    p1 = int(input())
+    rolls = functions.roll_off()
 
-    print("Player 2, select your character: \n\n")
-    print(" \t1) Space Marine\n",\
-          "\t2) Aeldari\n",\
-          "\t3) Ork\n\n")
+    if (rolls[0] > rolls[1]):
+        print("Player 2, would you like to seize the initiative?", \
+                "1 for yes; 2 for no: ")
+        seize_it = int(input())
+        os.system('clear')
 
-    p2 = int(input())
+        if(seize_it == 2):
+            turn = "p1"
 
-    print("\nRoll for first turn!")
-    print("\nPlayer 1, press any key to roll.")
-    input()
-    p1_roll = functions.roll_dice()
+        else:
+            turn = functions.seize_initiative(2)
 
-    print("\nPlayer 2, press any key to roll.")
-    input()
-    p2_roll = functions.roll_dice()
+    else:
+        print("Player 1, would you like to seize the initiative?", \
+                "1 for yes; 2 for no: ")
 
-    print("Player 1's roll: ", p1_roll)
-    print("Player 2's roll: ", p2_roll)
+        seize_it = int(input())
+        os.system('clear')
+
+        if(seize_it == 2):
+            turn = "p2"
+
+        else:
+            turn = functions.seize_initiative(1)
 
 main()
