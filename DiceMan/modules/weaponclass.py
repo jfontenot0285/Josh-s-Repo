@@ -1,38 +1,38 @@
 from modules import statsclass
 
 class Weaponstats(statsclass.Stats):
-    def __init__(self, S, A, D, Ap):
-        BS = 0
-        WS = 0
-        T = 0
-        W = 0
-        Sv = 0
-        statsclass.Stats.__init__(self, BS, WS, S, T, W, A, Sv)
-        self.__S = S
-        self.__A = A
-        self.__D = D
+    def __init__(self, St, At, Da, Ap):
+        Sh = 0
+        Me = 0
+        Vi = 0
+        Hp = 0
+        Ar = 0
+        statsclass.Stats.__init__(self, Sh, Me, St, Vi, Hp, At, Sv)
+        self.__St = St
+        self.__At = At
+        self.__Da = Da
         self.__Ap = Ap
 
-    def get_S():
-        return self.__S
+    def get_St():
+        return self.__St
 
-    def get_A():
-        return self.__A
+    def get_At():
+        return self.__At
 
-    def get_D():
-        return self.__D
+    def get_Da():
+        return self.__Da
 
     def get_Ap():
         return self.__Ap
 
-    def set_S(self, i):
-        self.__S = i
+    def set_St(self, i):
+        self.__St = i
 
-    def set_A(self, i):
-        self.__A = i
+    def set_At(self, i):
+        self.__At = i
 
-    def set_D(self, i):
-        self.__D = i
+    def set_Da(self, i):
+        self.__Da = i
 
     def set_Ap(self, i):
         self.__Ap = i
