@@ -7,7 +7,7 @@ class Weaponstats(statsclass.Stats):
         Vi = 0
         Hp = 0
         Ar = 0
-        statsclass.Stats.__init__(self, Sh, Me, St, Vi, Hp, At, Sv)
+        statsclass.Stats.__init__(self, Sh, Me, St, Vi, Hp, At, Ar)
         self.__St = St
         self.__At = At
         self.__Da = Da

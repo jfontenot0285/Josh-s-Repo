@@ -1,12 +1,12 @@
 class Stats:
-    def __init__(self, Sh, Me, St, Vi, Hp, At, Sv):
+    def __init__(self, Sh, Me, St, Vi, Hp, At, Ar):
         self.__Sh = Sh
         self.__Me = Me
         self.__St = St
         self.__Vi = Vi
         self.__Hp = Hp
         self.__At = At
-        self.__Sv = Sv
+        self.__Ar = Ar
 
     def get_Sh(self):
         return self.__Sh
@@ -26,8 +26,8 @@ class Stats:
     def get_At(self):
         return self.__At
 
-    def get_Sv(self):
-        return self.__Sv
+    def get_Ar(self):
+        return self.__Ar
 
     def set_Sh(self, i):
         self.__Sh = i
@@ -47,5 +47,5 @@ class Stats:
     def set_At(self, i):
         self.__At = i
 
-    def set_Sv(self, i):
-        self.__Sv = i
+    def set_Ar(self, i):
+        self.__Ar = i
