@@ -37,9 +37,15 @@ def set_stats(p):
             sel = Ranger, sniper, knife
             valid = 'y'
 
+<<<<<<< HEAD
         elif(sel == 3):
             sel = Tanker, shotgun, hammer
             valid = 'y'
+=======
+    print(" \t1) Warrior\n",\
+          "\t2) Ranger\n",\
+          "\t3) Tanker\n")
+>>>>>>> 54dfc857e12fc37157934244bd1970af85cad025
 
         else:
             print('Enter a valid selection 1, 2, or 3:')
