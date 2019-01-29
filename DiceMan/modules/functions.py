@@ -26,9 +26,9 @@ def char_select(p):
     print("Player ",p," select your character:")
     print("*"*32)
 
-    print(" \t1) Space Marine\n",\
-          "\t2) Aeldari\n",\
-          "\t3) Ork\n")
+    print(" \t1) Warrior\n",\
+          "\t2) Ranger\n",\
+          "\t3) Tanker\n")
 
     sel = int(input())
     os.system('clear')
