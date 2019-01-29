@@ -14,9 +14,22 @@ def main():
     rolls = functions.roll_off()
 
     if (rolls[0] > rolls[1]):
-        turn = 1
+        player_turn = 1
     else:
-        turn = 2
+        player_turn = 2
+    
+    end_game = 0
+    while (end_game == 0):
+        print ('Round begin!',\
+                'Player',player_turn,', take your shot!')
+        print('Press enter to shoot:')
+        input()
+        functions.clear_screen()
 
-    functions.shoot(p1[0])
+        if(player_turn == 1):
+            functions.shoot(p1,p2)
+            player_turn = 2
+        else:
+            functions.shoot(p2,p1)
+            player_turn = 1
 main()
