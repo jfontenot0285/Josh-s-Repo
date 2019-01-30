@@ -20,8 +20,11 @@ def main():
     
     end_game = 0
     while (end_game == 0):
-        print ('Round begin!',\
-                'Player',player_turn,', take your shot!')
+        print ('*'*16)
+        print ('* Round begin! *')
+        print ('*'*16)
+
+        print('Player',player_turn,', take your shot!',sep='')
         print('Press enter to shoot:')
         input()
         functions.clear_screen()
@@ -32,4 +35,7 @@ def main():
         else:
             functions.shoot(p2,p1)
             player_turn = 1
+
+        if(p1[1].get_Hp() <= 0 or p2[1].get_Hp() <= 0):
+            end_game = 1
 main()

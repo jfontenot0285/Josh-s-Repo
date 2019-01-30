@@ -17,8 +17,8 @@ def set_stats(p):
     knife = weaponstatsclass.Weaponstats(1,0,1,1)
     hammer = weaponstatsclass.Weaponstats(0,2,1,0)
     
-    valid = 'n'
-    while(valid == 'n'):
+    valid = 0
+    while(valid == 0):
         print("\n","*"*32, sep='')
         print("Player ",p," select your character:")
         print("*"*32)
@@ -27,19 +27,25 @@ def set_stats(p):
               "\t2) Ranger\n",\
                 "\t3) Tanker\n")
 
-        sel = int(input())
+        flag = 0
+        while(flag == 0):
+            try:
+                sel = int(input())
+                flag = 1
+            except ValueError:
+                print('Enter a valid selection 1, 2, or 3:')
 
         if (sel == 1):
             sel = p, Warrior, rifle, bayonet
-            valid = 'y'
+            valid = 1
 
         elif(sel == 2):
             sel = p, Ranger, sniper, knife
-            valid = 'y'
+            valid = 1
 
         elif(sel == 3):
             sel = p, Tanker, shotgun, hammer
-            valid = 'y'
+            valid = 1
 
         else:
             print('Enter a valid selection 1, 2, or 3:')
@@ -52,18 +58,19 @@ def roll_dice():
     return x
 
 def roll_off():
-    print("\nPlayer 1, press enter to roll:")
+    print("Player 1, press enter to roll:")
     input()
     p1_roll = roll_dice()
-    print("Player 1, you rolled a ", p1_roll, "!", sep='')
-    print('Press enter to continue:')
+    print("You rolled a ", p1_roll, "!", sep='')
+    print('Press enter to continue...')
     input()
+    clear_screen()
 
-    print("\nPlayer 2, press enter to roll.")
+    print("Player 2, press enter to roll.")
     input()
     p2_roll = roll_dice()
-    print("Player 2, you rolled a ", p2_roll, "!", sep='')
-    print("Press enter to continue")
+    print("You rolled a ", p2_roll, "!", sep='')
+    print("Press enter to continue...")
     input()
     clear_screen()
 
@@ -74,13 +81,13 @@ def roll_off():
     return p1_roll, p2_roll
 
 def shoot(p,op):
-    print('Player',p[0],'fires upon player',op[0],'. Roll to see if you hit!')
+    print('Player ',p[0],' fires upon player ',op[0],'. Roll to see if you hit!',sep='')
     print('Press enter to roll:')
     input()
     clear_screen()
     shoot_roll = roll_dice()
     if (shoot_roll >= p[1].get_Sh()):
-        print('Player',p[0],'successfully hits player',op[0],'!')
+        print('Player ',p[0],' successfully hits player ',op[0],'!',sep='')
         player_hit(p,op)
     else:
         print('Player missed!')
@@ -89,17 +96,17 @@ def shoot(p,op):
     clear_screen()
 
 def player_hit(p,op):
-    print('Player',p[0],', roll to see if your hit injures player',op[0],':')
-    print('Press enter to roll:')
+    print('Player ',p[0],', roll to see if your hit injures player',op[0],':',sep='')
     input()
     clear_screen()
     hit_roll = roll_dice()
     req_roll = injury_matrix(p,op)
-    print('Player',p[0],', you rolled a',hit_roll,', and player',op[0],'\'s',\
-            'vitality value is',op[1].get_Vi(),'.')
+    print('Player ',p[0],', your weapon\'s strength value is ',p[2].get_St(),\
+            ', and player ',op[0],'\'s vitality value is ',op[1].get_Vi(),'.',sep='')
+    print('You rolled a ',hit_roll,'.',sep='')
 
     if (hit_roll >= req_roll):
-    	print('Player',p[0],', you successfully injured player',op[0],'!')
+    	print('Player ',p[0],', you successfully injured player ',op[0],'!',sep='')
     	print('Press enter to continue:')
     	input()
     	clear_screen()
@@ -121,16 +128,22 @@ def player_injured(p,op):
     print('Press enter to coninue:')
     input()
     clear_screen()
-    print('Player',p[0],'\'s weapon armor piercing value is',p[2].get_Ap(),\
-            'and your armor value is',op[1].get_Ar(),'.')
+    print('Player ',p[0],'\'s weapon\'s armor piercing value is ',p[2].get_Ap(),\
+            ' and your armor value is ',op[1].get_Ar(),'.',sep='')
 
     if (op_roll >= op[1].get_Ar()-p[2].get_Ap()):
-        print('Player',op[0],'your armor prevented your injury from inflicting a loss of,\
-                hit points!')
+        print('Player ',op[0],', your armor prevented your injury from inflicting a loss of\
+                hit points!',sep='')
 
     else:
-        print('Player',op[0],'your injury inflicted a loss of 1 hit point.')
-        op[1].set_Hp(op[1].get_Hp()-1)
+        print('Player ',op[0],', your injury inflicted a loss of ',p[2].get_Da(),' hit point')
+        
+        if(p[2].get_Da() > 1):
+            print('s.')
+        else:
+            print('.')
+
+        op[1].set_Hp(op[1].get_Hp()-p[2].get_Da())
         print('Your hit point total is now at',op[1].get_Hp())
         print('Press enter to continue:')
         input()
