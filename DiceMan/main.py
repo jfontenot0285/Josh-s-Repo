@@ -4,6 +4,9 @@ from modules import *
 
 def main():
 
+    welcome = welcomeguiclass.WelcomeGUI()
+    turn = turnguiclass.TurnGUI()
+
     p1 = functions.set_stats(1)
     p2 = functions.set_stats(2)
 

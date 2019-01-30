@@ -1,4 +1,4 @@
-from modules import statsclass, weaponstatsclass
+from modules import statsclass, weaponstatsclass, welcomeguiclass
 import random, os, platform
 
 def set_stats(p):
