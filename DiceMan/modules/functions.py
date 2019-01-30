@@ -20,7 +20,7 @@ def set_stats(p):
     valid = 'n'
     while(valid == 'n'):
         print("\n","*"*32, sep='')
-        print("Player ",p+1," select your character:")
+        print("Player ",p," select your character:")
         print("*"*32)
         
         print(" \t1) Warrior\n",\
@@ -97,12 +97,19 @@ def player_hit(p,op):
     req_roll = injury_matrix(p,op)
     print('Player',p[0],', you rolled a',hit_roll,', and player',op[0],'\'s',\
             'vitality value is',op[1].get_Vi(),'.')
+
     if (hit_roll >= req_roll):
-        print('Player',p[0],', you successfully injured player',op[0],'!')
-    print('Press enter to continue:')
-    input()
-    clear_screen()
-    player_injured(p,op)
+    	print('Player',p[0],', you successfully injured player',op[0],'!')
+    	print('Press enter to continue:')
+    	input()
+    	clear_screen()
+    	player_injured(p,op)
+
+    else:
+    	print('Player',p[0],', your shot did not inflict an injury.')
+    	print('Press enter to continue:')
+    	input()
+    	clear_screen()
 
 def player_injured(p,op):
     print('Player',op[0],', roll for an armor save!')
@@ -123,7 +130,7 @@ def player_injured(p,op):
 
     else:
         print('Player',op[0],'your injury inflicted a loss of 1 hit point.')
-        op[1][4]-=1
+        op[1].set_Hp(op[1].get_Hp()-1)
         print('Your hit point total is now at',op[1].get_Hp())
         print('Press enter to continue:')
         input()
@@ -135,10 +142,10 @@ def injury_matrix(p,op):
     elif (p[2].get_St() < op[1].get_Vi()):
         req_roll = 5
 
-    elif (p[2].get_st() > op[1].get_Vi()):
+    elif (p[2].get_St() > op[1].get_Vi()):
         req_roll = 3
 
-    elif (p[2].get_st() >= op[1].get_vi()*2):
+    elif (p[2].get_St() >= op[1].get_vi()*2):
         req_roll = 2
 
     return req_roll

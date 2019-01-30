@@ -13,16 +13,16 @@ class Weaponstats(statsclass.Stats):
         self.__Da = Da
         self.__Ap = Ap
 
-    def get_St():
+    def get_St(self):
         return self.__St
 
-    def get_At():
+    def get_At(self):
         return self.__At
 
-    def get_Da():
+    def get_Da(self):
         return self.__Da
 
-    def get_Ap():
+    def get_Ap(self):
         return self.__Ap
 
     def set_St(self, i):
