@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="369.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View_Controller.AddPartInHouseAssociatedController">
+   <children>
+      <Label layoutX="22.0" layoutY="26.0" text="Add Associated Part">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="InHouse" layoutX="150.0" layoutY="26.0" mnemonicParsing="false" onAction="#onActionInhouseRadio" selected="true" text="In-House">
+         <toggleGroup>
+            <ToggleGroup fx:id="tog1" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="Outsourced" layoutX="235.0" layoutY="26.0" mnemonicParsing="false" onAction="#onActionOutsourcedRadio" text="Outsourced" toggleGroup="$tog1" />
+      <TextField fx:id="idFieldTxt" editable="false" layoutX="148.0" layoutY="71.0" onAction="#onActionIdField" text="Auto-Increment">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font></TextField>
+      <TextField fx:id="nameFieldTxt" layoutX="148.0" layoutY="115.0" onAction="#onActionNameField" />
+      <TextField fx:id="machineIDTxt" layoutX="148.0" layoutY="304.0" onAction="#onActionMachineID" />
+      <TextField fx:id="minFieldTxt" layoutX="279.0" layoutY="259.0" onAction="#onActionMinField" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="maxFieldTxt" layoutX="148.0" layoutY="259.0" onAction="#onActionMaxField" prefHeight="25.0" prefWidth="70.0" />
+      <TextField fx:id="invFieldTxt" layoutX="148.0" layoutY="163.0" onAction="#onActionInvField" />
+      <Button fx:id="saveBtn" layoutX="212.0" layoutY="346.0" mnemonicParsing="false" onAction="#onActionSave" text="Save" />
+      <Button fx:id="cancelBtn" layoutX="289.0" layoutY="346.0" mnemonicParsing="false" onAction="#onActionCancel" text="Cancel" />
+      <Label layoutX="48.0" layoutY="75.0" text="ID" />
+      <Label layoutX="48.0" layoutY="119.0" text="Name" />
+      <Label layoutX="48.0" layoutY="167.0" text="Inv" />
+      <Label layoutX="46.0" layoutY="308.0" text="MachineID" />
+      <Label layoutX="50.0" layoutY="260.0" text="Max" />
+      <Label layoutX="237.0" layoutY="263.0" text="Min" />
+      <TextField fx:id="priceFieldTxt" layoutX="148.0" layoutY="212.0" onAction="#onActionPriceField" />
+      <Label layoutX="47.0" layoutY="216.0" text="Price" />
+   </children>
+</AnchorPane>
