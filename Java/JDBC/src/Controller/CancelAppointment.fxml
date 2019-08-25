@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="290.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CancelAppointmentController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Cancel Appointment">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TableView fx:id="appointmentTbl" layoutX="20.0" layoutY="46.0" prefHeight="183.0" prefWidth="703.0">
+        <columns>
+          <TableColumn fx:id="titleCol" prefWidth="94.0" text="Title" />
+          <TableColumn fx:id="descriptionCol" prefWidth="123.0" text="Description" />
+            <TableColumn fx:id="locationCol" prefWidth="87.0" text="Location" />
+            <TableColumn fx:id="contactCol" prefWidth="103.0" text="Contact" />
+            <TableColumn fx:id="typeCol" prefWidth="85.0" text="Type" />
+            <TableColumn fx:id="startCol" prefWidth="105.0" text="Start" />
+            <TableColumn fx:id="endCol" prefWidth="105.0" text="End" />
+        </columns>
+      </TableView>
+      <Button fx:id="backBtn" layoutX="656.0" layoutY="251.0" mnemonicParsing="false" onAction="#onActionBack" prefHeight="25.0" prefWidth="59.0" text="Back" />
+      <Button fx:id="deleteBtn" layoutX="585.0" layoutY="251.0" mnemonicParsing="false" onAction="#onActionDelete" prefHeight="25.0" prefWidth="59.0" text="Delete" />
+   </children>
+</AnchorPane>
