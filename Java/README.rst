@@ -7,7 +7,8 @@ JDBC
 ****
 
 - JDBC is a front end gui-driven application that allows for a user to log in locally and interact with a band-end sql database.
-- You can get this to work with your own database by modifying the appropriate data members located in src/Model/DBConnection.java.
+- You can get this to work with your own database by modifying the appropriate data members located in src/Model/DBConnection.java
+- The application uses javafx and scene builder
 - The application focuses heavily on querying the database, then populating observable lists to allow for local presentation and manipulation of that data.
 - The user can create, modify, and delete customer appointments
 - A filter exists to view appointments by month and week
