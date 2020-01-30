@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    <topic name= "jobs">
+        <category>
+            <pattern>JOBS</pattern>
+            <template>
+                Visualize a picture of a city in your mind. Are you standing in a nearby park 
+                looking at the various skyscrapers, observing the traffic jams, utility vehicles 
+                making their way around? Or are you driving one of those utility vehicles, one of those 
+                stuck vehicles, or perhaps working in one of the skyscrapers?<br/>
+                Type "observing" or "participating".
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I AM *</pattern>
+            <template>
+                <think><set name="city"> <star/></set></think>
+                <condition name="city">
+                    <li value="PARTICIPATING">
+                        Now visualize a picture of a house. Do you first think about how it is constructed, 
+                        or do you imagine all the possible things that could go wrong with owning one?<br/>
+                        Say "construction" or "faults".
+                    </li>
+                    <li value="OBSERVING">
+                        As an individual with a broad perspective on the overall operations of an entity, 
+                        you tend towards a person with the skillset to manage those operations. A career in 
+                        information technology project management would likely be ideal for you. An IT project manager 
+                        oversees large-scale technology projects and managages the individual pieces that make up 
+                        the project to ensure it is delivered on time and under cost. Your response regarding being 
+                        an observer reflects a mind that can see both the big picture and the individual elements within.
+                    </li>
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I THINK ABOUT ITS *</pattern>
+            <template>
+                <think><set name="house"> <star/></set></think>
+                <condition name="house">
+                    <li value="CONSTRUCTION">
+                        When you think about the house's construction, do you imagine a blueprint or the physical parts?<br/>
+                        Type "blueprints" or "parts"
+                    </li>
+                    <li value="FAULTS">
+                        As an individual who takes a more deconstructive approach to solving problems, you would likely 
+                        fit the role of a quality assurance engineer. A quality assurance engineer generally dedicates
+                        his time to figuring out all the various ways he can break the code. Quality assurance is an integral 
+                        part to the software development cycle because a team dedicated to finding issues prevents unforeseeable 
+                        problems later down the road and saves company resources.
+                    </li>
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I IMAGINE *</pattern>
+            <template>
+                <think><set name="house2"> <star/></set></think>
+                <condition name="house2">
+                    <li value="BLUEPRINTS">
+                        When you imagine the blueprints, do you find yourself implementing existing 
+                        blueprints, or do you see yourself as the individual who creates the blueprints?<br/>
+                        Type "creating" or "following".
+                    </li>
+                    <li value="PARTS">
+                        Based on your answers, you would likely make a talented hardware engineer. A hardware engineer 
+                        researches, designs, and develops components to computer systems, such as the processors, circuit boards 
+                        and memory devices. Your responses indicate a more "hands on" approach to working with computers where your 
+                        focus is directed toward the physical aspects of design and development.
+                    </li>
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>I SEE MYSELF *</pattern>
+            <template>
+                <think><set name="house3"> <star/></set></think>
+                <condition name="house3">
+                    <li value="CREATING">
+                        As an individual who designs the foundational tools and expands the amount of knowledge available, you 
+                        would likely make a successful computer and information research scientist. This is an expert in the field 
+                        of computer science and usually requires making your way to a PhD. It is a hefty investment in time, but 
+                        the rewards are limitless as you would work on the forefront of technology. The information and research 
+                        scientist spends less time writing code and more time studying discrete mathematics and computation theory.
+                    </li>
+                    <li value="FOLLOWING">
+                        Based on your answers, you look to have the mind for a career in software engineering.
+                        A software engineer takes a constructive approach to solving problems in the abstract, 
+                        while conceptualizing the inner workings of a project in terms of blueprints and 
+                        abstract objects that inherit from those blueprints.<br/>
+                        Your responses indicate the kind of creative and abstract thinking software engineers 
+                        employ for developing all types of software products.
+                    </li>
+                </condition>
+            </template>
+        </category>
+        
+        <category>
+            <pattern>BLUEPRINT</pattern>
+            <template>
+                
+            </template>
+        </category>
+    
+    </topic>
+</aiml>
